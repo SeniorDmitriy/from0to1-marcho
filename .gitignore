@@ -8,3 +8,6 @@ package-lock.json
 app/css/*
 dist/
 node_modules/
+app/images/content/trending-products/shipping.jpg
+.gitignore
+app/images/content/trending-products/test-bg.jpg
