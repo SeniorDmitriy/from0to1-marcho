@@ -925,11 +925,12 @@
     @extend %roboto-400;
   }
 
-  &__link + .modal__link {
+  &__link+.modal__link {
     margin-left: 60px;
   }
 
   &__link--active {
+    font-weight: 700;
     color: $accent;
   }
 
@@ -970,6 +971,10 @@
     margin-top: 12px;
     display: inline-block;
     color: $accent;
+  }
+
+  &__text {
+    margin-bottom: 20px;
   }
 }
 
