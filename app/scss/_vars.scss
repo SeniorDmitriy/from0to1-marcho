@@ -30,7 +30,16 @@ $bg: #f6f6f6;
   box-shadow: 0px 7px 20px 0px rgba(88, 55, 59, 0.3);
   color: #fff;
   padding: 12px 26px;
+  cursor: pointer;
   @extend %roboto-400;
+}
+
+%checkbox-hidden {
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  position: absolute;
 }
 
 @function max($numbers...) {

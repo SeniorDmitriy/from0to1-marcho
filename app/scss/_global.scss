@@ -83,6 +83,7 @@ a {
     &:last-child {
       color: $accent;
       padding-right: 0;
+
       &::after {
         display: none;
       }
@@ -95,5 +96,66 @@ a {
 }
 
 header.header--404--page {
-  background-color: #f6f6f6;
+  background-color: $bg;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  padding: 30px 0;
+
+  &__arrows {
+    position: relative;
+    text-transform: uppercase;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 8px;
+      width: 5px;
+      height: 10px;
+      background-repeat: no-repeat;
+    }
+  }
+
+  &__prev {
+    padding-left: 15px;
+
+    &::before {
+      background-image: url('../images/icons/angle-prev.svg');
+      left: 0;
+    }
+  }
+
+  .pagination__list {
+    display: flex;
+    padding: 0 35px;
+  }
+
+  &__item {
+    padding: 0 15px;
+
+    &:first-child {
+      padding-left: 0;
+    }
+
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+
+  &__link {}
+
+  &__link--active {
+    color: $accent;
+  }
+
+  &__next {
+    padding-right: 15px;
+
+    &::before {
+      background-image: url('../images/icons/angle-next.svg');
+      right: 0;
+    }
+  }
 }
