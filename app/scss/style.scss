@@ -928,39 +928,6 @@
     padding: 30px 40px;
   }
 
-  &__item-info {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
-  }
-
-  &__item-author,
-  &__item-date {
-    position: relative;
-    padding-left: 30px;
-
-    &::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 4px;
-      width: 20px;
-      height: 20px;
-    }
-  }
-
-  &__item-author {
-    &::before {
-      background-image: url('../images/icons/author.svg');
-    }
-  }
-
-  &__item-date {
-    &::before {
-      background-image: url('../images/icons/time.svg');
-    }
-  }
-
   &__item-title {
     margin-bottom: 20px;
     font-size: 22px;
@@ -982,6 +949,35 @@
       width: 10px;
       height: 8px;
       background-image: url('../images/icons/arrow-right.svg');
+    }
+  }
+}
+
+.blog-box{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  &__author,
+  &__date{
+    position: relative;
+    padding-left: 30px;
+    &::before{
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 4px;
+      width: 20px;
+      height: 20px;
+    }
+  }
+  &__author{
+    &::before {
+      background-image: url('../images/icons/author.svg');
+    }
+  }
+  &__date{
+    &::before{
+      background-image: url('../images/icons/time.svg');
     }
   }
 }
@@ -1124,16 +1120,6 @@
   max-width: 370px;
   width: 100%;
 
-  &__item {
-    margin-bottom: 40px;
-    border: 1px solid #ececec;
-    padding: 30px 35px 40px;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-
   &__title {
     margin-bottom: 25px;
     font-size: 22px;
@@ -1145,7 +1131,9 @@
 }
 
 .filter-search {
-
+  border: 1px solid #ececec;
+  padding: 30px 35px 40px;
+  margin-bottom: 40px;
   &__form {
     display: flex;
   }
@@ -1170,7 +1158,9 @@
 }
 
 .filter-price {
-
+  border: 1px solid #ececec;
+  padding: 30px 35px 40px;
+  margin-bottom: 40px;
   &__form {}
 
   &__input {}
@@ -1229,7 +1219,9 @@
 }
 
 .filter-color {
-
+  border: 1px solid #ececec;
+  padding: 30px 35px 40px;
+  margin-bottom: 40px;
   &__form {}
 
   &__label {
@@ -1293,6 +1285,9 @@
 }
 
 .filter-size {
+  border: 1px solid #ececec;
+  padding: 30px 35px 40px;
+  margin-bottom: 40px;
   &__form {}
 
   &__label {
@@ -1331,6 +1326,9 @@
 }
 
 .filter-category {
+  border: 1px solid #ececec;
+  padding: 30px 35px 40px;
+  margin-bottom: 40px;
   &__label {
     display: block;
     margin-bottom: 15px;
@@ -1362,6 +1360,9 @@
 }
 
 .filter-popular {
+  border: 1px solid #ececec;
+  padding: 30px 35px 40px;
+  margin-bottom: 40px;
   &__label {
     display: inline-block;
     margin-right: 13px;
@@ -1883,7 +1884,197 @@
   }
 }
 
+.blog-page{
+  padding: 120px 0 60px;
+  &__item--slider{
+    .blog-page__item-box{
+      margin-top: -8px;
+    }
+  }
+  &__item-slider{
+    .slick-prev,
+    .slick-next{
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 40px;
+      height: 40px;
+      background-color: #fff;
+      z-index: 5;
+      border: none;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      background-color: $accent;
+      box-shadow: 0px 7px 20px 0px rgba(254, 62, 87, 0.3);
+      path{
+        fill: #fff;
+      }
+    }
+    .slick-prev{
+      left: 40px;
+    }
+    .slick-next{
+      left: auto;
+      right: 40px;
+    }
+    .slick-disabled{
+      background-color: #fff;
+      box-shadow: 0px 7px 20px 0px rgba(168, 168, 168, 0.3);
+      path{
+        fill: $accent;
+      }
+    }
+  }
+  &__inner{
+    display: flex;
+    justify-content: space-between;
+  }
+  &__content{
+    width: 770px;
+    margin-right: 30px;
+  }
+  &__aside{
+    width: 370px;
+  }
+  &__item{
+    margin-bottom: 60px;
+    &.blog-page__item--img-none{
+      box-shadow: 0px 20px 60px 0px rgba(202, 202, 202, 0.35);
+      border-top: 1px solid #ececec;
+    }
+  }
+  &__item-link{
+    color: inherit;
+    font-size: inherit;
+    font-family: inherit;
+    font-weight: inherit;
+  }
+  &__img{
+    max-width: 770px;
+    height: 450px;
+    object-fit: cover;
+  }
+  &__item-box{
+    padding: 40px;
+    border: 1px solid #ececec;
+    border-top: none;
+  }
+  &__item-title{
+    margin-bottom: 20px;
+    color: $title;
+    font-size: 22px;
+    transition: ease 0.3s color;
+    @extend %roboto-700;
+    &:hover{
+      color: $accent;
+      transition: ease 0.3s color;
+    }
+  }
+  .blog-box{
+    justify-content: start;
+    &__author {
+      margin-right: 30px;
+    }
+  }
+}
 
+.person{
+  margin-bottom: 40px;
+  padding: 40px 25px;
+  border: 1px solid #ececec;
+  text-align: center;
+  &__img{
+    display: inline-block;
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    margin: 0 auto 35px;
+  }
+  &__name{  
+    color: $title;
+    font-size: 18px;
+    @extend %roboto-700;
+  }
+  &__position{
+    color: $accent;
+    margin-bottom: 25px;
+  }
+  &__text{
+    margin-bottom: 30px;
+  }
+  &__social{
+
+  }
+  &__social-link{
+    margin: 0 8px;
+    path{
+      fill: $default;
+      transition: ease 0.3s fill;
+    }
+    &:hover{
+      path{
+        fill: $accent;
+      }
+    }
+  }
+}
+
+.latest-post{
+  border: 1px solid #ececec;
+  padding: 30px 35px 40px;
+  margin-bottom: 40px;
+  &__title{
+    color: $title;
+    text-transform: uppercase;
+    @extend %roboto-400;
+    font-size: 22px;
+    margin-bottom: 35px;
+  }
+  &__box-title{}
+  &__item{
+    margin-bottom: 20px;
+    display: flex;
+    &+.latest-post__item{
+      padding-top: 20px;
+      border-top: 1px solid #ececec;
+    }
+  }
+  &__img-link{
+    display: block;
+    margin-right: 20px;
+  }
+  &__img{
+    min-width: 80px;
+    height: 80px;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+  &__box{
+  }
+  &__title-link{
+    @extend %roboto-400;
+    font-size: 18px;
+    line-height: 28px;
+    color: $title;
+  }
+  &__date{
+    position: relative;
+    padding-left: 26px;
+    &::before{
+      content: '';
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      background-image: url('../images/icons/calendar.svg');
+      background-repeat: no-repeat;
+      top: 5px;
+      left: 0;
+    }
+  }
+}
 
 
 
