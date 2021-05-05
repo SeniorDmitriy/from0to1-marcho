@@ -1742,16 +1742,11 @@
       display: block;
     }
   }
-  &__content-comments{
-    margin-bottom: 35px;
-    &:last-child{
-      margin-bottom: 0;
-    }
-  }
 }
 
 .comments{
   display: flex;
+  margin-bottom: 40px;
   &__avatar{
     margin-right: 30px;
     width: 71px;
@@ -2076,7 +2071,138 @@
   }
 }
 
+.blog-one{
+  &__text{
+    padding: 30px;
+    border: 1px solid #ececec;
+    border-top: none;
+    h4{
+      color: $title;
+      font-size: 22px;
+      @extend %roboto-700;
+      margin: 25px 0;
+    }
+    p{
+      margin: 25px 0;
+    }
+    blockquote{
+      background-color: $bg;
+      border-left: 3px solid $accent;
+      color: $title;
+      @extend %roboto-400;
+      font-size: 22px;
+      margin: 25px 0;
+      padding: 35px;
+    }
+  }
+  &__info{
+    display: flex;
+    margin-bottom: 25px;
+  }
+  &__info-link{
+    position: relative;
+    margin-right: 30px;
+    padding-left: 28px;
+    font-size: 16px;
+    color: $default;
+    @extend %quicksand-500;
+    &::before{
+      content: '';
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      background-image: url('../images/icons/calendar.svg');
+      background-repeat: no-repeat;
+      top: 1px;
+      left: 0;
+    }
+  }
+  &__info-link--comment::before{
+    background-image: url('../images/icons/comment.svg');
+    top: 2px;
 
+  }
+  &__info-link--author::before{
+    background-image: url('../images/icons/user-blog.svg');
+  }
+  &__img-left{
+    margin-right: 30px;
+    margin-bottom: 10px;
+    float: left;
+  }
+  &__img-right{
+    margin-left: 30px;
+    margin-bottom: 10px;
+    float: right;
+  }
+  &__form-title{
+    text-transform: uppercase;
+    margin: 35px 0 25px;
+    color: $title;
+    @extend %roboto-700;
+    font-size: 22px;
+  }
+  .comments-form{
+    border-bottom: 0;
+    padding-bottom: 0;
+  }
+  &__box{
+    display: flex;
+    justify-content: space-between;
+    padding: 25px 0;
+  }
+  &__tags{
+    a{
+      text-decoration: none;
+    }
+  }
+  &__tags,
+  &__share{
+    span{
+      @extend %roboto-700;
+      text-transform: uppercase;
+      color: $title;
+    }
+  }
+  &__share-link{
+    margin-left: 15px;
+    vertical-align: middle;
+    path{
+      fill: #727272;
+      transition: ease fill 0.3s;
+    }
+    &:hover{
+      path{
+        fill: $accent;
+      }
+    }
+  }
+  &__author{
+    border-bottom: 1px solid #ececec;
+    padding-bottom: 40px;
+    margin-bottom: 40px;
+    display: flex;
+  }
+  &__author-img{
+    margin-right: 30px;
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+  }
+  &__author-name{
+    margin-bottom: 25px;
+    font-size: 22px;
+    @extend %roboto-700;
+    color: $title;
+  }
+}
+.comments-title{
+  font-size: 24px;
+  margin-bottom: 25px;
+  color: $title;
+  @extend %roboto-700;
+  text-transform: uppercase;
+}
 
 
 
