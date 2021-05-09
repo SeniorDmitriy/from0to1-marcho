@@ -1,0 +1,243 @@
+.product {
+  padding: 115px 0;
+  text-align: center;
+
+  &__title {
+    margin-bottom: 25px;
+  }
+
+  &__text {
+    margin: 0 auto 60px;
+    max-width: 565px;
+  }
+
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 45px 30px;
+  }
+
+  &__link {
+    display: inline-block;
+    margin-top: 50px;
+    padding: 14px 27px;
+    color: $title;
+    border: 1px solid $accent;
+    text-transform: uppercase;
+  }
+}
+
+.product-item {
+  max-width: 370px;
+  text-align: center;
+
+  &.product-item--list {
+    display: flex;
+    min-width: 100%;
+    text-align: left;
+
+    &:hover {
+      .product-item__link-box {
+        transform: translateY(-280%);
+      }
+    }
+
+    .product-item__img-box {
+      margin-bottom: 0;
+      height: 250px;
+      min-width: 200px;
+    }
+
+    .product-item__text {
+      margin-bottom: 25px;
+    }
+
+    .product-item__btn {
+      border: none;
+      padding: 11px 40px;
+      color: #fff;
+      background-color: $title;
+      cursor: pointer;
+      transition: ease 0.3s background-color, ease 0.3s box-shadow;
+
+      &:hover {
+        background-color: $accent;
+        box-shadow: 0px 7px 20px 0px rgba(88, 55, 59, 0.3);
+        transition: ease 0.3s background-color, ease 0.3s box-shadow;
+      }
+    }
+
+    .product-item__link-box {
+      width: 115px;
+      background-color: transparent;
+      box-shadow: none;
+      bottom: auto;
+
+      .product-item__link--line {
+        display: none;
+      }
+    }
+
+    .product-item__link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      background-color: #fff;
+    }
+
+    .product-item__content-box {
+      display: block;
+    }
+
+    .product-item__wrapper-box {
+      padding: 10px 40px;
+      border: 1px solid #ececec;
+      border-left: none;
+    }
+
+    .product-item__box {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .product-item__title {
+      padding: 0;
+      margin-bottom: 10px;
+      order: -1;
+      width: 100%;
+    }
+
+    .product-item__star {
+      margin: 0;
+      margin-left: 23px;
+    }
+
+    .price {
+      margin-left: -12px;
+      order: -1;
+    }
+  }
+
+  &__content-box {
+    display: none;
+  }
+
+  &__img-box {
+    position: relative;
+    margin-bottom: 15px;
+    height: 370px;
+    overflow: hidden;
+  }
+
+  &__img {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__link-box {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0 auto;
+    width: 220px;
+    height: 50px;
+    border-radius: 25px;
+    box-shadow: 0px 5px 30px 0px rgba(152, 152, 152, 0.2);
+    background-color: #fff;
+    transform: translateY(300%);
+    transition: ease transform .3s;
+  }
+
+  &__link {
+    display: inherit;
+
+    path {
+      transition: ease fill 0.3s;
+    }
+  }
+
+  &__link:hover {
+    transition: ease fill 0.3s;
+
+    path {
+      fill: $accent;
+      transition: ease fill 0.3s;
+    }
+  }
+
+  &__link--active {
+    path {
+      fill: $accent;
+    }
+  }
+
+  &__link--line::before,
+  &__link--line::after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    width: 1px;
+    height: 30px;
+    background-color: #ececec;
+  }
+
+  &__link--line::before {
+    left: 70px;
+  }
+
+  &__link--line::after {
+    right: 70px;
+  }
+
+  &__star {
+    margin: 0 auto;
+  }
+
+  &__title {
+    padding: 15px 0 20px;
+    color: $title;
+  }
+
+  &--sale {
+    .product-item__img-box::before {
+      content: 'SALE';
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      padding: 10px;
+      line-height: 1;
+      @extend %btn;
+    }
+  }
+
+  &:hover {
+    .product-item__link-box {
+      transform: translateY(0);
+      transition: ease transform .3s;
+    }
+  }
+}
+
+.price {
+  display: flex;
+  justify-content: center;
+  @extend %roboto-400;
+
+  &__new {
+    padding: 0 12px;
+    color: $title;
+  }
+
+  &__old {
+    padding: 0 12px;
+    text-decoration: line-through;
+    color: $default;
+  }
+}
