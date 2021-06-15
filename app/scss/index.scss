@@ -5,6 +5,7 @@
 @import '../../node_modules/@fancyapps/fancybox/dist/jquery.fancybox';
 @import '../../node_modules/rateyo/src/jquery.rateyo';
 @import 'global';
+@import '../modules/_top/top';
 @import '../modules/_header/header';
 @import '../modules/_top-slider/top-slider';
 @import '../modules/_categories-info/categories-info';
@@ -14,40 +15,6 @@
 @import '../modules/_partners/partners';
 @import '../modules/_blog/blog';
 @import '../modules/_footer/footer';
-
-.page-404 {
-  padding: 110px 0 120px;
-
-  &__inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  &__content {
-    max-width: 570px;
-    width: 100%;
-  }
-
-  &__title {
-    margin-bottom: 30px;
-    font-size: 48px;
-    color: #28384f;
-    @extend %roboto-700;
-  }
-
-  &__text {
-    margin-bottom: 40px;
-    max-width: 470px;
-    width: 100%;
-  }
-
-  &__link {
-    @extend %btn;
-  }
-
-  &__img {}
-}
 
 .shop {
   padding: 130px 0 110px;
@@ -547,7 +514,7 @@
   outline: none;
   @extend %quicksand-500;
   color: $title;
-  text-align: center;
+  text-align: center !important;
 }
 
 .jq-number__spin {

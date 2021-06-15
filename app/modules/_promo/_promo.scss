@@ -26,6 +26,7 @@
   &__clock {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
   }
 
   &__clock-item {
@@ -54,5 +55,33 @@
     color: $title;
     border: 1px solid $accent;
     text-transform: uppercase;
+  }
+}
+
+@media (max-width: 620px){
+  .promo{
+    padding: 60px 0;
+    &__clock{
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    &__clock-item{
+      margin: 20px 37px;
+    }
+  }
+}
+
+@media (max-width: 450px){
+  .promo{
+    padding: 60px 0;
+    &__clock-item{
+      margin: 12px;
+    }
+    &__title{
+      margin-bottom: 20px;
+    }
+    &__link{
+      margin-top: 20px;
+    }
   }
 }

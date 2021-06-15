@@ -1,10 +1,22 @@
-.partners {
+.partners{
   padding: 32px 0;
-
-  &__list {
+  &__list{
     height: 170px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+}
+
+@media (max-width: 500px){
+  .partners{
+    &__list{
+      flex-wrap: wrap;
+      height: auto;
+      justify-content: center;
+    }
+    &__item{
+      margin: 10px 21px;
+    }
   }
 }

@@ -6,3 +6,128 @@
 @import '../modules/_header/header';
 @import '../modules/_top/top';
 @import '../modules/_footer/footer';
+
+@media (max-width: 1200px) {
+  .product-one{
+    &__inner{
+      display: block;
+    }
+    &__slide{
+      margin-right: 0;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    &__content{
+      width: 100%;
+    }
+  }
+  .product-slide{
+    &__thumb{
+      display: none;
+    }
+    &__big{
+      width: 100%;
+    }
+    &__big-item{
+      display: flex !important;
+      justify-content: center;
+    }
+  }
+  .related{
+    padding-bottom: 60px;
+    &__items{
+      grid-template-columns: repeat(2, 1fr);
+      .product-item{
+        margin: 0 auto 20px auto;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px){
+  .product-item{
+    &__img-box{
+      height: 260px;
+    }
+  }
+  .product-slide{
+    &__big{
+      img{
+        width: 450px;
+        max-height: 100%;
+        height: auto;
+      }
+    }
+  }
+  .comments{
+    display: block;
+    &__avatar{
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
+  }
+  .comments-form{
+    &__rating{
+      display: block;
+    }
+    &__box-input{
+      display: block;
+    }
+    &__text-input{
+      width: 100%;
+      margin-bottom: 10px;
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
+    &__label{
+      display: block;
+      margin-right: 0;
+      margin-top: 10px;
+    }
+  }
+  .product-tabs{
+    &__top-item{
+      +.product-tabs__top-item{
+        margin-left: 20px;
+      }
+    }
+  }
+}
+
+@media (max-width: 450px){
+  .product-page{
+    padding-top: 60px;
+  }
+  .product-filter{
+    &__size label{
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+  }
+  .product-one{
+    &__price{
+      display: block;
+    }
+    &__price-old{
+      padding-left: 0;
+    }
+  }
+  .product-tabs{
+    padding-bottom: 60px;
+    &__top{
+      display: block;
+    }
+    &__top-item{
+      display: block;
+      +.product-tabs__top-item{
+        margin-left: 0;
+      }
+    }
+  }
+  .related{
+    &__items{
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+}

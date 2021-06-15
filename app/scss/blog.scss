@@ -6,3 +6,70 @@
 @import '../modules/_header/header';
 @import '../modules/_top/top';
 @import '../modules/_footer/footer';
+
+@media (max-width: 1230px){
+  .person,
+  .latest-post{
+    display: none;
+  }
+  .blog-page{
+    &__inner{
+      flex-direction: column;
+    }
+    &__content{
+      margin-right: 0;
+      width: 100%;
+    }
+    &__img{
+      max-width: 100%;
+      width: 100%;
+    }
+    &__aside{
+      order: -1;
+      width: 100%;
+      .filter-category,
+      .filter-popular{
+        display: none;
+      }
+    }
+  }
+  .filter-search{
+    &__input{
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 620px){
+  .blog-page{
+    padding: 60px 0;
+    &__img{
+      height: 260px;
+    }
+    &__item-box{
+      padding: 20px;
+    }
+  }
+}
+
+@media (max-width: 375px){
+  .blog-page{
+    &__img{
+      height: 200px;
+    }
+    &__item-box{
+      padding: 10px 5px;
+    }
+    &__item--slider{
+      .slick-next{
+        right: 10px;
+      }
+      .slick-prev{
+        left: 10px;
+      }
+    }
+  }
+  .filter-search{
+    padding: 15px;
+  }
+}

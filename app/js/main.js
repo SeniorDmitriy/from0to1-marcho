@@ -1,5 +1,18 @@
 $(function () {
 
+  $('.footer-top__title').on('click', function(){
+    $(this).next().slideToggle();
+    $(this).toggleClass('active');
+  });
+
+  $('.menu__btn').on('click', function(){
+    $('.menu__list').toggleClass('menu__list--active');
+  });
+
+  $('.shop__filter-btn').on('click', function(){
+    $('.filter').slideToggle();
+  });
+
   $('.blog-page__item-slider').slick({
     fade: true,
     infinite: false,
@@ -31,7 +44,15 @@ $(function () {
     slidesToScroll: 1,
     fade: true,
     arrows: false,
-    draggable: false
+    draggable: false,
+    responsive: [
+      {
+        breakpoint: 1221,
+        settings: {
+          draggable: true
+        },
+      }
+    ]
   });
 
   $('.shop-content__btn').on('click', function () {
@@ -41,10 +62,12 @@ $(function () {
 
   $('.button-list').on('click', function () {
     $('.product-item').addClass('product-item--list');
+    $('.shop-content__inner').addClass('shop-content__inner--nogrid');
   });
 
   $('.button-grid').on('click', function () {
     $('.product-item').removeClass('product-item--list');
+    $('.shop-content__inner').removeClass('shop-content__inner--nogrid');
   });
 
   $('.select-style, .product-one__num').styler();

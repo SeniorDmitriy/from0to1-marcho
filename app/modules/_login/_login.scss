@@ -1,40 +1,33 @@
 .modal {
-  padding: 110px 115px;
-
+  padding: 110px 0 115px;
   &__links {
     display: flex;
     justify-content: center;
     margin-bottom: 50px;
   }
-
-  &__link {
+  &__link{
     font-size: 22px;
     text-transform: uppercase;
     color: #909090;
     @extend %roboto-400;
   }
-
-  &__link+.modal__link {
+  &__link+.modal__link{
     margin-left: 60px;
   }
-
-  &__link--active {
+  &__link--active{
     font-weight: 700;
     color: $accent;
   }
-
-  &__form {
+  &__form{
     max-width: 570px;
     margin: 0 auto;
   }
-
-  &__label {
+  &__label{
     margin-bottom: 30px;
     display: block;
     cursor: pointer;
   }
-
-  &__input {
+  &__input{
     margin-top: 4px;
     padding: 0 15px;
     display: block;
@@ -43,8 +36,7 @@
     border: none;
     background-color: $bg;
   }
-
-  &__btn {
+  &__btn{
     display: block;
     background-color: $title;
     text-transform: uppercase;
@@ -56,14 +48,26 @@
     width: 100%;
     cursor: pointer;
   }
-
-  &__error {
+  &__error{
     margin-top: 12px;
     display: inline-block;
     color: $accent;
   }
-
-  &__text {
+  &__text{
     margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .modal{
+    padding: 60px 0;
+    &__form{
+      max-width: 100%;
+      width: 100%;
+      margin: 0;
+    }
+    &__links{
+      margin-bottom: 30px;
+    }
   }
 }

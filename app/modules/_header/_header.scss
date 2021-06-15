@@ -6,10 +6,14 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
   }
 }
 
 .menu {
+  &__btn{
+    display: none;
+  }
   &__list {
     display: flex;
   }
@@ -20,7 +24,7 @@
 
   &__list-link {
     @extend %roboto-400;
-    padding-bottom: 0 2px 1px;
+    padding: 0 2px 1px;
     text-transform: uppercase;
     border-bottom: 1px solid transparent;
     color: $title;
@@ -65,5 +69,99 @@
     line-height: 20px;
     color: #fff;
     background-color: $accent;
+  }
+}
+
+@media (max-width: 1200px) {
+  .header__inner{
+    padding-right: 10px;
+  }
+}
+@media (max-width: 860px) {
+  .menu{
+    order: 1;
+    margin-left: 40px;
+    &__list{
+      position: absolute;
+      top: 110px;
+      width: 100%;
+      left: 0;
+      z-index: 5;
+      background-color: #fff;
+      transform: translateY(-200%);
+      transition: ease 0.3s transform;
+      flex-direction: column;
+      align-items: center;
+      &.menu__list--active{
+        transform: translateY(0);
+        transition: ease 0.3s transform;
+      }
+    }
+    &__list-link{
+      width: 100%;
+      padding: 10px 0;
+      display: block;
+    }
+    &__list-item+.menu__list-item{
+      margin-left: 0;
+    }
+    &__list-item{
+      text-align: center;
+      padding: 0 15px;
+      width: 100%;
+    }
+    &__btn{
+      position: relative;
+      width: 30px;
+      height: 22px;
+      border: none;
+      background-color: transparent;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0;
+      cursor: pointer;
+      &::after,
+      &::before{
+        content: '';
+        top: 0;
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background-color: $title;
+      }
+      &::after{
+        top: auto;
+        bottom: 0;
+      }
+    }
+    &__btn-line{
+      width: 100%;
+      height: 2px;
+      background-color: $title;
+    }
+  }
+  .user-nav{
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 500px) {
+  .header{
+    &__inner{
+      padding-right: 0;
+    }
+  }
+  .menu{
+    order: 0;
+    &__list{
+      top: 140px;
+    }
+  }
+  .user-nav{
+    padding-right: 15px;
+    margin-top: 35px;
+    justify-content: flex-end;
+    width: 100%;
   }
 }
