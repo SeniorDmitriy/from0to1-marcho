@@ -1375,6 +1375,29 @@
   }
 }
 
+@media (max-width: 992px) {
+  .product-item{
+    &__img-box{
+      height: 300px;
+    }
+  }
+}
 
+@media (max-width: 992px){
+  .product{
+    &__items{
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  .product-item{
+    margin: 0 auto;
+  }
+}
 
-@import 'media';
+@media (max-width: 450px){
+  .product{
+    &__items{
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+}
